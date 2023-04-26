@@ -1,0 +1,7 @@
+name: CustomItemsPAPER
+version: '${project.version}'
+main: me.jsinco.customitemspaper.CustomItemsPAPER
+api-version: 1.19
+commands:
+  boombow:
+  leer:

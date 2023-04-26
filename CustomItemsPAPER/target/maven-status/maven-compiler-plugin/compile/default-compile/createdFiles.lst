@@ -1,0 +1,6 @@
+me\jsinco\customitemspaper\commands\giveleer.class
+me\jsinco\customitemspaper\items\ItemManager.class
+me\jsinco\customitemspaper\CustomItemsPAPER.class
+me\jsinco\customitemspaper\events\LeerEvents.class
+me\jsinco\customitemspaper\commands\giveItem.class
+me\jsinco\customitemspaper\events\BoombowEvents.class

@@ -1,0 +1,7 @@
+name: CustomItemsPAPER
+version: '1.0'
+main: me.jsinco.customitemspaper.CustomItemsPAPER
+api-version: 1.19
+commands:
+  boombow:
+  leer:
