@@ -1,6 +1,11 @@
-me\jsinco\customitemspaper\commands\giveleer.class
+me\jsinco\customitemspaper\events\GlowElyG.class
+me\jsinco\customitemspaper\events\HiPoweredExplosives.class
+me\jsinco\customitemspaper\commands\tabCompleter.class
+me\jsinco\customitemspaper\events\superPickaxe.class
+me\jsinco\customitemspaper\events\PhantomStarEvent.class
 me\jsinco\customitemspaper\items\ItemManager.class
 me\jsinco\customitemspaper\CustomItemsPAPER.class
 me\jsinco\customitemspaper\events\LeerEvents.class
 me\jsinco\customitemspaper\commands\giveItem.class
+me\jsinco\customitemspaper\events\GlowElytrasRED.class
 me\jsinco\customitemspaper\events\BoombowEvents.class

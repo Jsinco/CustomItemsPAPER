@@ -3,5 +3,8 @@ version: '1.0'
 main: me.jsinco.customitemspaper.CustomItemsPAPER
 api-version: 1.19
 commands:
-  boombow:
-  leer:
+  giveitem:
+    description: Give a custom item to a player
+    usage: /<command> <player> <item>
+    permission: customitemspaper.giveitem
+    permission-message: You do not have permission to use this command

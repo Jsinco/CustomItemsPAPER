@@ -9,11 +9,36 @@ import org.jetbrains.annotations.NotNull;
 
 public class giveItem implements CommandExecutor {
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-
-        if (commandSender instanceof Player){
-            Player p = (Player) commandSender;
-            p.getInventory().addItem(ItemManager.BoomBow);
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
+        if (sender instanceof Player){
+            Player p = (Player) sender;
+            if (args.length == 1){
+                if (args[0].equalsIgnoreCase("boombow")){
+                    p.getInventory().addItem(ItemManager.BoomBow);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("leer")){
+                    p.getInventory().addItem(ItemManager.Leer);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("phantomstar")){
+                    p.getInventory().addItem(ItemManager.PhantomStar);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("hi-poweredexplosives")){
+                    p.getInventory().addItem(ItemManager.HiPoweredExplosives);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("ggely")) {
+                    p.getInventory().addItem(ItemManager.GreenGlowElytra);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("rgely")) {
+                    p.getInventory().addItem(ItemManager.RedGlowElytra);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("superpickaxe")) {
+                    p.getInventory().addItem(ItemManager.superPickaxe);
+                    return true;
+                }
+                p.sendMessage("§7Not a valid item.");
+            } else {
+                p.sendMessage("§7Please specify an item to give.");
+            }
         }
         return true;
     }
