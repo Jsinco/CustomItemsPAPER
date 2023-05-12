@@ -4,39 +4,29 @@ import me.jsinco.customitemspaper.items.ItemManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+
 
 public class giveItem implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if (sender instanceof Player){
             Player p = (Player) sender;
-            if (args.length == 1){
-                if (args[0].equalsIgnoreCase("boombow")){
-                    p.getInventory().addItem(ItemManager.BoomBow);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("leer")){
-                    p.getInventory().addItem(ItemManager.Leer);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("phantomstar")){
-                    p.getInventory().addItem(ItemManager.PhantomStar);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("hi-poweredexplosives")){
-                    p.getInventory().addItem(ItemManager.HiPoweredExplosives);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("superpickaxe")) {
-                    p.getInventory().addItem(ItemManager.superPickaxe);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("satchel")) {
-                    p.getInventory().addItem(ItemManager.Satchel);
+            ItemStack[] ItemManagement = new ItemStack[]{ItemManager.BoomBow,ItemManager.Leer,
+                    ItemManager.PhantomStar,ItemManager.HiPoweredExplosives,ItemManager.Satchel,ItemManager.superPickaxe};
+            String[] ItemNames = new String[]{"Boombow","Leer","PhantomStar","Hi-PoweredExplosives","Satchel","superpickaxe"};
+            for (int i = 0; i < ItemNames.length; i++) {
+                if (args[0].equalsIgnoreCase(ItemNames[i])){
+                    p.getInventory().addItem(ItemManagement[i]);
                     return true;
                 }
-                p.sendMessage("§7Not a valid item.");
-            } else {
-                p.sendMessage("§7Please specify an item to give.");
             }
+            p.sendMessage("§7Not a valid item.");
         }
         return true;
     }
 }
+

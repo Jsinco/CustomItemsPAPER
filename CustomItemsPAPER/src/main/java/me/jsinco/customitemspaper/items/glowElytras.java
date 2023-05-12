@@ -1,6 +1,5 @@
 package me.jsinco.customitemspaper.items;
 
-
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -13,7 +12,7 @@ import java.util.List;
 @SuppressWarnings("deprecation")
 public class glowElytras {
 
-    public static ItemStack getElytra(String color){
+    public static ItemStack getElytra(String color){ //redo
         if (color.equalsIgnoreCase("green")){
             return Green;
         } else if (color.equalsIgnoreCase("red")){

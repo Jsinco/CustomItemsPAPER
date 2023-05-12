@@ -1,16 +1,19 @@
 name: CustomItemsPAPER
-version: 1.1.0
+version: 1.3.4
 main: me.jsinco.customitemspaper.CustomItemsPAPER
 api-version: 1.19
-load: POSTWORLD
+author: Jsinco
 commands:
   cely:
-    description: Give a glow elytra to a player
+    description: Colored elytras
     usage: /<command> <item>
-    permission: customitemspaper.cely
-    permission-message: You do not have permission to use this command
+    permission: customitemspaper.giveitem
+    aliases:
+      - coloredelytra
   giveitem:
     description: Give a custom item to a player
     usage: /<command> <item>
     permission: customitemspaper.giveitem
-    permission-message: You do not have permission to use this command
+    aliases:
+      - getitem
+      - get
