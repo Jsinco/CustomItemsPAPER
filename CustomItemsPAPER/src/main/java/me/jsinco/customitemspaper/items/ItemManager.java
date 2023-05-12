@@ -18,8 +18,7 @@ public class ItemManager {
     public static ItemStack HiPoweredExplosives;
     public static ItemStack PhantomStar;
     public static ItemStack superPickaxe;
-    public static ItemStack GreenGlowElytra;
-    public static ItemStack RedGlowElytra;
+    public static ItemStack Satchel;
 
     public static void callItem(){
         createBoomBow();
@@ -27,31 +26,7 @@ public class ItemManager {
         createHiPoweredExplosives();
         createPhantomStar();
         createSuperPickaxe();
-        createGreenGlowElytra();
-        createRedGlowElytra();
-    }
-
-    private static void createRedGlowElytra(){
-        ItemStack item = new ItemStack(Material.ELYTRA,1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ChatColor.of("#FD1082") + "§lJsinco's Red Wings");
-        List<String> lore = new ArrayList<>(List.of("§4Glow R","","","§cWanna glow red?"));
-        meta.setLore(lore);
-        meta.addEnchant(Enchantment.DURABILITY, 9, true);
-        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
-        item.setItemMeta(meta);
-        RedGlowElytra = item;
-    }
-    private static void createGreenGlowElytra(){
-        ItemStack item = new ItemStack(Material.ELYTRA,1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ChatColor.of("#4FFD61") + "§lJsinco's Green Wings");
-        List<String> lore = new ArrayList<>(List.of("§2Glow G","","","§aWanna glow green?"));
-        meta.setLore(lore);
-        meta.addEnchant(Enchantment.DURABILITY, 9, true);
-        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
-        item.setItemMeta(meta);
-        GreenGlowElytra = item;
+        createSatchel();
     }
 
     private static void createBoomBow(){
@@ -136,5 +111,17 @@ public class ItemManager {
         meta.addEnchant(Enchantment.MENDING, 1, true);
         item.setItemMeta(meta);
         superPickaxe = item;
+    }
+
+    private static void createSatchel(){
+        ItemStack item = new ItemStack(Material.SNOWBALL, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(ChatColor.of("#FB2E47") + "Satchel");
+        List<String> lore = new ArrayList<>(List.of("§6Launch"));
+        meta.setLore(lore);
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        Satchel = item;
     }
 }

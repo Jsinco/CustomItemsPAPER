@@ -25,14 +25,11 @@ public class giveItem implements CommandExecutor {
                 } else if (args[0].equalsIgnoreCase("hi-poweredexplosives")){
                     p.getInventory().addItem(ItemManager.HiPoweredExplosives);
                     return true;
-                } else if (args[0].equalsIgnoreCase("ggely")) {
-                    p.getInventory().addItem(ItemManager.GreenGlowElytra);
-                    return true;
-                } else if (args[0].equalsIgnoreCase("rgely")) {
-                    p.getInventory().addItem(ItemManager.RedGlowElytra);
-                    return true;
                 } else if (args[0].equalsIgnoreCase("superpickaxe")) {
                     p.getInventory().addItem(ItemManager.superPickaxe);
+                    return true;
+                } else if (args[0].equalsIgnoreCase("satchel")) {
+                    p.getInventory().addItem(ItemManager.Satchel);
                     return true;
                 }
                 p.sendMessage("§7Not a valid item.");

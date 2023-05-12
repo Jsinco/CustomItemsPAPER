@@ -11,8 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -23,7 +21,8 @@ public class LeerEvents implements Listener {
     @EventHandler
     public void EnderEyeEvent(PlayerInteractEvent event){
         if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getItem().getItemMeta().equals(ItemManager.Leer.getItemMeta()) && !cooldownplayers.contains(event.getPlayer().getName())) {
+            if (event.getItem() != null && event.getItem().getItemMeta().equals(ItemManager.Leer.getItemMeta())
+                    && !cooldownplayers.contains(event.getPlayer().getName())) {
                 cooldownplayers.add(event.getPlayer().getName());
                 Bukkit.getScheduler().scheduleSyncDelayedTask(CustomItemsPAPER.getPlugin(CustomItemsPAPER.class), () -> {
                     Collection<Entity> nearestLeer = event.getPlayer().getLocation().getWorld().getNearbyEntities(event.getPlayer().getLocation(), 3, 3, 3);

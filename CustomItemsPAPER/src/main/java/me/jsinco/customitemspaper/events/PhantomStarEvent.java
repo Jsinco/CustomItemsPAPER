@@ -17,7 +17,7 @@ public class PhantomStarEvent implements Listener {
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent event) {
         if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getItem().getItemMeta().equals(ItemManager.PhantomStar.getItemMeta())) {
+            if (event.getItem() != null && event.getItem().getItemMeta().equals(ItemManager.PhantomStar.getItemMeta())) {
                 player = event.getPlayer();
                 GameMode gameMode = player.getGameMode();
                 player.getInventory().removeItem(ItemManager.PhantomStar);

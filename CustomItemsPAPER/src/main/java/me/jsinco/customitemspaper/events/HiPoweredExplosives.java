@@ -1,6 +1,7 @@
 package me.jsinco.customitemspaper.events;
 
 import me.jsinco.customitemspaper.CustomItemsPAPER;
+import me.jsinco.customitemspaper.RegisterGlowColors;
 import me.jsinco.customitemspaper.items.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,13 +15,13 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.Team;
+
 
 public class HiPoweredExplosives implements Listener {
     @EventHandler
     public void PlayerFireHIEXPLOSIVE(PlayerInteractEvent event) {
         if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getItem().getItemMeta().equals(ItemManager.HiPoweredExplosives.getItemMeta())) {
+            if (event.getItem() != null && event.getItem().getItemMeta().equals(ItemManager.HiPoweredExplosives.getItemMeta())) {
                 Player p = event.getPlayer();
                 Location location = p.getLocation().add(0,15,0);
                 p.getInventory().removeItem(ItemManager.HiPoweredExplosives);
@@ -36,12 +37,10 @@ public class HiPoweredExplosives implements Listener {
                             arrows[n].setCustomName("HI-EXPLOSIVE");
                             Scoreboard board = Bukkit.getScoreboardManager().getMainScoreboard();
                             try {
-                                Team team = board.getTeam("HI-EXPLOSIVE");
-                                team.addEntry(arrows[n].getUniqueId().toString());
+                                board.getTeam("aqua").addEntry(arrows[n].getUniqueId().toString());
                             } catch (Exception exception) {
-                                Team team = board.registerNewTeam("HI-EXPLOSIVE");
-                                team.setColor(ChatColor.DARK_GREEN);
-                                team.addEntry(arrows[n].getUniqueId().toString());
+                                RegisterGlowColors.registerGlowColors();
+                                board.getTeam("aqua").addEntry(arrows[n].getUniqueId().toString());
                             }
                             arrows[n].setGlowing(true);
                             arrows[n].setVisualFire(true);
