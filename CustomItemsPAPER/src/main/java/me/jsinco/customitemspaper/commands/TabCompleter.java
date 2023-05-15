@@ -14,7 +14,12 @@ public class TabCompleter implements org.bukkit.command.TabCompleter {
             if (args.length == 1) {
                 return List.of("boombow", "leer", "phantomstar", "hi-poweredexplosives", "satchel");
             }
+        } else if (command.getName().equalsIgnoreCase("cely")) {
+            if (args.length == 1){
+                return List.of("aqua", "blue", "gold", "green", "red", "purple" ,"yellow");
+            }
         }
         return null;
     }
 }
+

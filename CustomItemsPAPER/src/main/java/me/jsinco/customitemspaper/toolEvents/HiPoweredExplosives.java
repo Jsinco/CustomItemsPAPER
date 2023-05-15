@@ -1,8 +1,8 @@
 package me.jsinco.customitemspaper.toolEvents;
 
 import me.jsinco.customitemspaper.CustomItemsPAPER;
-import me.jsinco.customitemspaper.items.ItemManager;
 import me.jsinco.customitemspaper.util.RegisterGlowColors;
+import me.jsinco.customitemspaper.items.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
@@ -14,6 +14,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.scoreboard.Scoreboard;
+
 
 public class HiPoweredExplosives implements Listener {
     @EventHandler

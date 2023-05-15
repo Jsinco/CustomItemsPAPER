@@ -1,7 +1,6 @@
 package me.jsinco.customitemspaper.items;
 
 import me.jsinco.customitemspaper.util.ColorUtils;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -18,23 +17,23 @@ public class ItemManager {
     public static ItemStack Leer;
     public static ItemStack HiPoweredExplosives;
     public static ItemStack PhantomStar;
-    public static ItemStack superPickaxe;
     public static ItemStack Satchel;
+    public static ItemStack PropellerCap;
 
     public static void callItem(){
         createBoomBow();
         createLeer();
         createHiPoweredExplosives();
         createPhantomStar();
-        createSuperPickaxe();
         createSatchel();
+        createPropellerCap();
     }
 
     private static void createBoomBow(){
         ItemStack item = new ItemStack(Material.CROSSBOW, 1);
         CrossbowMeta meta = (CrossbowMeta) item.getItemMeta();
         meta.setDisplayName("§4§lBoomBow");
-        List<String> lore = new ArrayList<>(List.of("§c§lExplosives","","§c\"It smells like gunpowder...\"","","","§41 TNT per shot","§4This weapon requires at least 1 arrow in your inventory to fire"));
+        List<String> lore = new ArrayList<>(List.of("§cExplosives","","§c\"It smells like gunpowder...\"","","","§41 TNT per shot","§4This weapon requires at least 1 arrow in your inventory to fire"));
         meta.setLore(lore);
         meta.addEnchant(Enchantment.QUICK_CHARGE, 4, true);
         meta.addEnchant(Enchantment.DURABILITY, 5, true);
@@ -74,27 +73,24 @@ public class ItemManager {
         item.setItemMeta(meta);
         PhantomStar = item;
     }
-    private static void createSuperPickaxe(){
-        ItemStack item = new ItemStack(Material.NETHERITE_PICKAXE, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§b§lSuper Pickaxe");
-        List<String> lore = new ArrayList<>(List.of("§9Super","","§9§l\"inactive\""));
-        meta.setLore(lore);
-        meta.addEnchant(Enchantment.DIG_SPEED, 10, true);
-        meta.addEnchant(Enchantment.DURABILITY, 10, true);
-        meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
-        meta.addEnchant(Enchantment.MENDING, 1, true);
-        item.setItemMeta(meta);
-        superPickaxe = item;
-    }
     private static void createSatchel(){
         ItemStack item = new ItemStack(Material.SNOWBALL);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ColorUtils.translateColorCodes("&#fb4b2a&lS&#fb5735&la&#fc6440&lt&#fc704b&lc&#fc7c56&lh&#fd8961&le&#fd956c&ll"));
-        meta.setLore(List.of(ColorUtils.translateColorCodes("&#ffa500Launch"),"",""));
-        meta.addEnchant(Enchantment.THORNS, 2, true);
+        meta.setDisplayName(ColorUtils.translateColorCodes("&#7d51fb&lL&#8357fb&lu&#885dfb&lc&#8e63fb&li&#9469fb&lf&#9a6ffc&li&#9f75fc&le&#a57bfc&ln&#ab81fc&le&#b087fc&l'&#b68dfc&ls &#bc93fc&lS&#c199fc&la&#c79ffd&lt&#cda5fd&lc&#d3abfd&lh&#d8b1fd&le&#deb7fd&ll"));
+        meta.setLore(List.of(ColorUtils.translateColorCodes("&#fb9ab7L&#fba8c1a&#fcb6cau&#fcc5d4n&#fcd3dec&#fde1e7h &#fdeff1I")
+                ,ColorUtils.translateColorCodes("&#6865fbE&#686dfbx&#6975fbp&#697dfcl&#6985fco&#6a8efcs&#6a96fci&#6a9efdv&#6ba6fde &#6baefdI"), ""
+        ,ColorUtils.translateColorCodes("&#c684fbW&#c483fbh&#c281fbe&#bf80fbn &#bd7ffbf&#bb7dfba&#b97cfbl&#b67bfbl&#b479fbi&#b278fbn&#b077fbg&#ad75fb, &#ab74fct&#a973fch&#a771fci&#a470fcs &#a26ffcs&#a06dfca&#9e6cfct&#9b6bfcc&#9969fch&#9768fce&#9567fcl &#9265fcw&#9064fci&#8e63fcl&#8c61fcl &#8960fca&#875ffcc&#855dfct&#835cfci&#805bfcv&#7e59fca&#7c58fct&#7a57fde")
+        ,ColorUtils.translateColorCodes("&#7755fda&#7554fdf&#7353fdt&#7151fde&#6e50fdr &#6c4ffd5 &#6a4dfdt&#684cfdi&#654bfdc&#6349fdk&#6148fds")));
         meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
         item.setItemMeta(meta);
         Satchel = item;
     }
+    private static void createPropellerCap(){
+        ItemStack item = new ItemStack(Material.GOLDEN_HELMET);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("Debug");
+        item.setItemMeta(meta);
+        PropellerCap = item;
+    }
+
 }

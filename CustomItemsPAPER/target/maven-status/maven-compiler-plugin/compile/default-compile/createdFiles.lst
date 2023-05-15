@@ -1,7 +1,7 @@
 me\jsinco\customitemspaper\toolEvents\PhantomStarEvent.class
 me\jsinco\customitemspaper\toolEvents\SatchelThrow.class
 me\jsinco\customitemspaper\armoryEvents\GlowElyG.class
-me\jsinco\customitemspaper\toolEvents\superPickaxe.class
+me\jsinco\customitemspaper\armoryEvents\PropellerCap.class
 me\jsinco\customitemspaper\items\ItemManager.class
 me\jsinco\customitemspaper\CustomItemsPAPER.class
 me\jsinco\customitemspaper\commands\TabCompleter.class

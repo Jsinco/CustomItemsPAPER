@@ -47,3 +47,4 @@ public class PhantomStarEvent implements Listener {
         }, 1L);
     }
 }
+
